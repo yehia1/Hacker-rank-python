@@ -1,0 +1,8 @@
+from itertools import product
+l,k = map(int,input().split())
+list1= []
+for i in range(l):
+    list1.append(map(int,input().split()))
+
+results = map(lambda x: sum(i**2 for i in x)%k, product(*list1))
+print(max(results))
